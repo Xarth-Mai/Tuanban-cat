@@ -24,7 +24,7 @@ body {
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
 }
-img { display: block; max-width: 100%; }
+img { display: block; max-width: 100%; height: auto; }
 figure, h1, h2, h3, p { margin: 0; }
 button, input { font: inherit; color: inherit; }
 button { cursor: pointer; }

@@ -80,6 +80,15 @@ def check(screenshots=None, http_only=False):
                 assert page.locator("img").evaluate_all("images => images.every(i => i.complete && i.naturalWidth > 0)")
                 assert not errors, errors
                 assert not external, external
+                for width in (320, 390, 768, 1440):
+                    page.set_viewport_size({"width": width, "height": 1000})
+                    assert page.evaluate("document.documentElement.scrollWidth <= innerWidth"), f"Overflow at {width}px"
+                    # Responsive width must also release the HTML height attribute.
+                    for selector in (".hero-art img", ".reference img"):
+                        assert page.locator(selector).evaluate("""image => {
+                            const box = image.getBoundingClientRect();
+                            return Math.abs(box.height - box.width * image.naturalHeight / image.naturalWidth) < 1;
+                        }"""), f"Distorted {selector} at {width}px"
                 if screenshots and (http_only or url.startswith("file:")):
                     screenshots.mkdir(parents=True, exist_ok=True)
                     page.evaluate("window.scrollTo(0,0)")
