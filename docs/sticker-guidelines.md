@@ -1,30 +1,30 @@
-# 贴图规范与扩展约定
+# 贴图创作规范
 
-正式主资产：单张 **1024×1024 静态 WebP**，RGB、不透明、奶油色背景，单一明确情绪。
-主体约占画面 65–75% 为创作目标，留出耳朵、尾巴和动作符号的安全边距；不机械裁切以追求占比。
-线条粗细与已有系列协调，可用少量爱心、问号、蒸汽、星光或动作线，不依赖大段文字。
+正式贴图统一为 **1024×1024、静态、不透明的 RGB WebP**，使用奶油色背景，一张图片表达一个主要情绪。
 
-## 命名与目录
+主体建议占画面约 65–75%，给耳朵、尾巴、动作符号留出空间。线条与现有系列协调，可以使用少量爱心、问号、星光或动作线，不依赖大段文字。
 
-`assets/stickers/{category}/{id}.webp`，例如 `assets/stickers/greeting/greeting-wave.webp`。
-ID 用稳定的小写短横线格式，不使用中文路径或临时序号。同一 ID 的修改递增 `version`。
-图片建议小于 512 KiB，校验器当前硬上限为 2 MiB；清晰度优先于极限压缩。
+## 分类与命名
 
-已有分类：greeting、happy、confused、comfort。
-预留分类：sleepy、daily、playful、shy、love。尚未有图片的分类显示真实空态，不填占位图。
-未来 work、weather、holiday 等新增分类需同步更新前端筛选、清单校验与文档。
+图片路径为 `assets/stickers/{category}/{id}.webp`，例如 `assets/stickers/greeting/greeting-wave.webp`。ID 使用稳定的小写短横线格式，已有作品修改时递增 `version`。
 
-## 数据源
+当前已有四类：`greeting`、`happy`、`confused`、`comfort`。更多分类随实际作品加入；新增分类时同步更新网页标签、构建校验与相关测试。
 
-手工编辑 `data/stickers.json`，包含 id、title、filename、category、mood、keywords、description、
-story、is_featured、version。description 描述实际画面，story 记录适合的社交使用场景，不能虚构不存在的道具。
-关键词使用自然中文，mood 使用便于机器复用的英文情绪词。
+图片建议小于 512 KiB，校验硬上限为 2 MiB；不要为了压缩牺牲清晰度。
 
-运行 `python3 scripts/build_manifest.py` 生成普通 JS 数据和完整 manifest。不得只改生成文件；
-CI 通过 `--check` 检查它们与源 JSON、文件哈希同步。
+## 元数据
 
-## 使用节奏
+只编辑 `data/stickers.json`。每个条目包含 `id`、`title`、`filename`、`category`、`mood`、`keywords`、`description`、`story`、`is_featured` 和 `version`。
 
-一张图表达一个主要情绪。通常每回合一张足够，连续贴图应跟随用户的互动意愿。
-安慰先尊重真实情绪，不把拥抱强加给别人；表示疑惑时不讽刺。图库是表达材料，不替下游 Agent 定义人格。
-没有合适贴图时文字也很好。路径或接口成功不等于图片实际送达，下游应如实处理投递状态。
+- `description`：客观描述画面中的动作、表情与道具
+- `story`：适合在怎样的对话或日常情境使用
+- `keywords`：自然中文检索词
+- `mood`：供程序复用的英文情绪词
+
+运行 `python3 scripts/build_manifest.py` 生成供网页使用的 `stickers.js` 和供外部项目使用的 `manifest.json`。CI 会检查生成文件与资源哈希的一致性。
+
+## 表达原则
+
+表情是表达素材，不替下游 Agent 定义人格。安慰先尊重真实情绪，亲近与拥抱应考虑对方意愿，疑惑不等于嘲讽。没有合适图片时，使用文字即可。
+
+下游使用时也应如实处理发送结果：图片路径存在或上传成功，不代表最终消息已送达。

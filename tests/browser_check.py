@@ -49,11 +49,16 @@ def check(screenshots=None, http_only=False):
                 expect(page.locator("#sticker-dialog")).to_be_visible()
                 expect(page.locator("#dialog-title")).to_have_text("开心小心心")
                 expect(page.locator("#dialog-image")).to_have_attribute("src", "assets/stickers/happy/happy-heart.webp")
-                with page.expect_download() as info:
-                    page.locator("#dialog-download").click()
-                download = info.value
-                assert download.suggested_filename == "happy-heart.webp"
-                assert download.failure() is None
+                assert page.locator("#dialog-download").get_attribute("download") == "happy-heart.webp"
+                assert page.locator("#dialog-download").get_attribute("href") == "assets/stickers/happy/happy-heart.webp"
+                # Headless Chromium may not emit download events for file:// assets.
+                # Verify the local link above and test the actual download over HTTP.
+                if url.startswith("http://"):
+                    with page.expect_download() as info:
+                        page.locator("#dialog-download").click()
+                    download = info.value
+                    assert download.suggested_filename == "happy-heart.webp"
+                    assert download.failure() is None
                 page.keyboard.press("Escape")
                 expect(page.locator("#sticker-dialog")).not_to_be_visible()
                 page.locator("#search").fill("")
@@ -62,10 +67,11 @@ def check(screenshots=None, http_only=False):
                 page.keyboard.press("ArrowRight")
                 assert page.locator("#dialog-title").text_content() != first
                 page.keyboard.press("Escape")
-                page.locator('[data-category="sleepy"]').click()
-                expect(page.locator("#empty-state")).to_be_visible()
-                expect(page.locator(".sticker-card")).to_have_count(0)
-                page.locator("#reset-filters").click()
+                expect(page.locator("#filters button")).to_have_count(5)
+                expect(page.locator('[data-category="sleepy"]')).to_have_count(0)
+                expect(page.locator("#collection-summary")).to_contain_text("12 张")
+                page.locator("#search").fill("")
+                page.locator('[data-category="all"]').click()
                 expect(page.locator(".sticker-card")).to_have_count(12)
                 page.locator("#search").fill("找不到的猫猫词")
                 expect(page.locator("#empty-state")).to_be_visible()
@@ -74,6 +80,15 @@ def check(screenshots=None, http_only=False):
                 assert page.locator("img").evaluate_all("images => images.every(i => i.complete && i.naturalWidth > 0)")
                 assert not errors, errors
                 assert not external, external
+                for width in (320, 390, 768, 1440):
+                    page.set_viewport_size({"width": width, "height": 1000})
+                    assert page.evaluate("document.documentElement.scrollWidth <= innerWidth"), f"Overflow at {width}px"
+                    # Responsive width must also release the HTML height attribute.
+                    for selector in (".hero-art img", ".reference img"):
+                        assert page.locator(selector).evaluate("""image => {
+                            const box = image.getBoundingClientRect();
+                            return Math.abs(box.height - box.width * image.naturalHeight / image.naturalWidth) < 1;
+                        }"""), f"Distorted {selector} at {width}px"
                 if screenshots and (http_only or url.startswith("file:")):
                     screenshots.mkdir(parents=True, exist_ok=True)
                     page.evaluate("window.scrollTo(0,0)")
