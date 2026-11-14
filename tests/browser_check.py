@@ -49,11 +49,16 @@ def check(screenshots=None, http_only=False):
                 expect(page.locator("#sticker-dialog")).to_be_visible()
                 expect(page.locator("#dialog-title")).to_have_text("开心小心心")
                 expect(page.locator("#dialog-image")).to_have_attribute("src", "assets/stickers/happy/happy-heart.webp")
-                with page.expect_download() as info:
-                    page.locator("#dialog-download").click()
-                download = info.value
-                assert download.suggested_filename == "happy-heart.webp"
-                assert download.failure() is None
+                assert page.locator("#dialog-download").get_attribute("download") == "happy-heart.webp"
+                assert page.locator("#dialog-download").get_attribute("href") == "assets/stickers/happy/happy-heart.webp"
+                # Headless Chromium may not emit download events for file:// assets.
+                # Verify the local link above and test the actual download over HTTP.
+                if url.startswith("http://"):
+                    with page.expect_download() as info:
+                        page.locator("#dialog-download").click()
+                    download = info.value
+                    assert download.suggested_filename == "happy-heart.webp"
+                    assert download.failure() is None
                 page.keyboard.press("Escape")
                 expect(page.locator("#sticker-dialog")).not_to_be_visible()
                 page.locator("#search").fill("")
