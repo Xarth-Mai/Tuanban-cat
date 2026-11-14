@@ -1,11 +1,21 @@
 # Assets & licensing notice
 
-This repository is distributed under the **Mozilla Public License 2.0 (MPL-2.0)**. This includes `art/`, `stickers/`, the accompanying metadata, documentation, and validation script, to the extent the contributors have licensable rights in those contributions. The complete license is in `LICENSE`.
+The character descriptions, illustrations, metadata, website and scripts in this repository are
+made available under **Mozilla Public License 2.0 (MPL-2.0)**, to the extent contributors hold
+licensable rights. The full license is in LICENSE. Preserve required notices and comply with
+applicable Source Code Form obligations when redistributing or modifying covered files.
+Retaining a Tuanban attribution and repository link is appreciated; it does not replace license obligations.
 
-The initial cat illustrations were **AI-assisted/generated**, followed by human selection and file preparation. The repository does not guarantee that particular AI-generated pixels are eligible for copyright protection, or that the character is exclusive, original relative to every existing work, or eligible for trademark registration. Users should independently assess their intended uses.
+The illustrations are AI-assisted/generated, selected and prepared for this original character project.
+The twelve v1 stickers are newly generated independent pictures, not enlargements of the old 192px examples.
+Subsequent preparation used existing outputs only: downsampling to 1024px, RGB WebP export, and reuse of the
+existing character sheet/illustrations for reference, cover and social preview. No additional drawings
+were made to fill missing views. Artwork and metadata should be inspected for consistency before reuse.
 
-No third-party franchise art or collected web memes are intentionally included. No trademark license or trademark registration is asserted; MPL-2.0 does not grant trademark rights.
+The project does not guarantee that particular generated pixels are copyrightable, that the character is
+exclusive relative to all existing works, or that a name/image has passed trademark clearance. No registered
+trademark is asserted for 团斑 / Tuanban. MPL-2.0 does not grant trademark rights.
 
-If you redistribute files separately from this repository, include this notice or equivalent licensing information where recipients can reasonably find it, and comply with MPL-2.0 as applicable.
-
-Artwork: four initial 192 × 192 RGB PNG sticker assets, plus one character design reference image.
+No third-party franchise art, collected web memes or externally licensed character packs are intentionally
+included. If files are redistributed separately, keep this notice or equivalent accessible licensing
+information with them. User projects do not acquire ownership of the name through downloading assets.

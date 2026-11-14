@@ -1,27 +1,21 @@
-# Tuanban · 团斑 🐾
+# Tuanban · 团斑
 
-> A little cat holding everyday feelings in its paws
+A gentle, shy gray-and-white kitten holding everyday feelings in her paws. This standalone
+character repository includes her profile, lore, visual guidance, 12 formal stickers, reusable
+metadata, and a local preview site. It is separate from Hermes Lively.
 
-![Tuanban character reference](art/character-sheet.png)
+Open `index.html` directly, or run `python3 -m http.server 8000`. There is no build step, framework,
+node_modules, CDN, runtime API or JSON fetch. Browse categories, search, open large previews and save WebP.
 
-**Tuanban** is a round, warm-hearted white cat with a gray patch over the viewer-right side of its head, pink inner ears, brown hand-drawn outlines and rosy cheeks.
+Formal stickers are 1024×1024 opaque WebP. The first four emotions were redrawn, not enlarged from
+192px samples. Existing generated outputs were reused for this implementation; no further artwork was
+commissioned for the unfinished side view. The existing character sheet includes front/back and
+expressions; a complete standalone three-view set is still pending.
 
-This is an **independent open character-art and sticker repository**, not a Hermes plugin. It can provide assets to Hermes Lively or any other compatible application.
+`data/stickers.json` is the editable metadata source; `scripts/build_manifest.py` generates
+`data/stickers.js` and `data/manifest.json`. Validate with `python3 scripts/validate_assets.py`.
+The site itself needs no Python dependencies. See the Chinese README and docs for the full workflow.
 
-## Starter stickers
-
-| Greeting | Happy | Confused | Comfort / rest |
-|:--:|:--:|:--:|:--:|
-| ![](stickers/greeting.png) | ![](stickers/happy.png) | ![](stickers/confused.png) | ![](stickers/comfort.png) |
-
-Four opaque RGB PNG files, **192 × 192 px** and under **40 KiB** each. Browse the descriptions in `stickers/manifest.json`. The full-size `art/character-sheet.png` is a style reference, not a production sticker.
-
-Read the [character guide](docs/CHARACTER.md), [style guide](docs/STYLE-GUIDE.md), and [contribution rules](CONTRIBUTING.md).
-
-Validate the assets with `python3 scripts/validate.py` (standard library only).
-
-## License and origins
-
-The repository is published under **[MPL-2.0](LICENSE)** insofar as contributors have rights they can license. The illustrations are AI-assisted, selected and prepared for this collection. Publication does not promise exclusivity, copyright eligibility, or trademark clearance. The name Tuanban / 团斑 has not been formally cleared or registered as a trademark. MPL-2.0 does not grant trademark rights. See [ASSET-NOTICE.md](ASSET-NOTICE.md).
-
-No third-party copyrighted meme or franchise art is included.
+Licensed under MPL-2.0 to the extent contributors have licensable rights. AI-assisted artwork; no
+copyrightability, exclusivity, or registered trademark is asserted. Preserve ASSET-NOTICE.md when
+redistributing separately. Prior v0.1 PNG paths are replaced; history is available through Git.

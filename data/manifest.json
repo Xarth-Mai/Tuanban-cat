@@ -1,0 +1,316 @@
+{
+  "schema_version": 1,
+  "collection": "Tuanban · 团斑",
+  "character": "tuanban",
+  "version": "1.0.0",
+  "license": "MPL-2.0",
+  "notice": "ASSET-NOTICE.md",
+  "format": {
+    "width": 1024,
+    "height": 1024,
+    "mime": "image/webp",
+    "alpha": false
+  },
+  "stickers": [
+    {
+      "id": "greeting-wave",
+      "title": "挥爪问好",
+      "filename": "assets/stickers/greeting/greeting-wave.webp",
+      "category": "greeting",
+      "mood": [
+        "friendly",
+        "warm",
+        "hello"
+      ],
+      "keywords": [
+        "问候",
+        "你好",
+        "打招呼",
+        "早安"
+      ],
+      "description": "团斑举起小爪子，露出粉色肉垫，热情地向你问好。",
+      "story": "适合轻松开场、早安问候和久别重逢。",
+      "is_featured": true,
+      "version": 1,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 65696,
+      "sha256": "30297d11edaf22b25b4e6d19b5f822bc288b3dbaa1205c8b4f622e3c7ae168dd"
+    },
+    {
+      "id": "greeting-peek",
+      "title": "探头打招呼",
+      "filename": "assets/stickers/greeting/greeting-peek.webp",
+      "category": "greeting",
+      "mood": [
+        "curious",
+        "shy",
+        "hello"
+      ],
+      "keywords": [
+        "探头",
+        "在吗",
+        "偷偷",
+        "问候"
+      ],
+      "description": "团斑从浅蓝色小门后探出脑袋，悄悄挥一挥爪。",
+      "story": "想加入聊天时，先温柔地露个脸。",
+      "is_featured": false,
+      "version": 1,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 85358,
+      "sha256": "9ba2a75073f5a15d298fce096a3437ff5f9bcc499301935eb624c5532984f9b5"
+    },
+    {
+      "id": "greeting-hi",
+      "title": "小小挥爪",
+      "filename": "assets/stickers/greeting/greeting-hi.webp",
+      "category": "greeting",
+      "mood": [
+        "gentle",
+        "friendly",
+        "hello"
+      ],
+      "keywords": [
+        "挥爪",
+        "嗨",
+        "你好",
+        "慢热"
+      ],
+      "description": "团斑带着微笑，轻轻举起一只小爪子。",
+      "story": "适合不想太张扬的小声问好。",
+      "is_featured": false,
+      "version": 1,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 61572,
+      "sha256": "693006531d1beae74f2762e86d3fcc07a18d8615f930d2a2f8757a830edfe8d9"
+    },
+    {
+      "id": "happy-cheer",
+      "title": "开心举爪",
+      "filename": "assets/stickers/happy/happy-cheer.webp",
+      "category": "happy",
+      "mood": [
+        "joy",
+        "celebrate",
+        "excited"
+      ],
+      "keywords": [
+        "开心",
+        "庆祝",
+        "好耶",
+        "成功"
+      ],
+      "description": "团斑举起双爪，笑得眼睛弯弯，身边亮起小小星光。",
+      "story": "好消息值得一起举爪庆祝。",
+      "is_featured": true,
+      "version": 1,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 75650,
+      "sha256": "c13531522406909eff608de4c6dcb54f5711d1ee2f5a38c42132f9c139454eb7"
+    },
+    {
+      "id": "happy-heart",
+      "title": "开心小心心",
+      "filename": "assets/stickers/happy/happy-heart.webp",
+      "category": "happy",
+      "mood": [
+        "happy",
+        "love",
+        "delighted"
+      ],
+      "keywords": [
+        "开心",
+        "爱心",
+        "喜欢",
+        "谢谢"
+      ],
+      "description": "团斑把一颗粉色爱心抱在怀里，藏不住脸上的欢喜。",
+      "story": "收到善意、喜欢的礼物或温柔夸奖时。",
+      "is_featured": false,
+      "version": 1,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 84152,
+      "sha256": "898eeaac16ffd2f34bc178585343303ca89ca5369a78ad3b5730d58114701545"
+    },
+    {
+      "id": "happy-bounce",
+      "title": "原地蹦蹦",
+      "filename": "assets/stickers/happy/happy-bounce.webp",
+      "category": "happy",
+      "mood": [
+        "joy",
+        "playful",
+        "excited"
+      ],
+      "keywords": [
+        "蹦蹦",
+        "雀跃",
+        "开心",
+        "好棒"
+      ],
+      "description": "团斑轻轻跳起来，尾巴和小爪子也跟着开心。",
+      "story": "适合终于完成、等到好消息的小雀跃。",
+      "is_featured": false,
+      "version": 1,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 77302,
+      "sha256": "61559f8c9d0f74a9cd8bfe0e6ded3a66584b1864416e4cf3b0c7e859322195c5"
+    },
+    {
+      "id": "confused-tilt",
+      "title": "歪头问号",
+      "filename": "assets/stickers/confused/confused-tilt.webp",
+      "category": "confused",
+      "mood": [
+        "confused",
+        "curious",
+        "question"
+      ],
+      "keywords": [
+        "疑惑",
+        "歪头",
+        "问号",
+        "不懂"
+      ],
+      "description": "团斑歪着脑袋，睁大眼睛，小爪子停在脸颊旁。",
+      "story": "想听你再解释一点，不急着下结论。",
+      "is_featured": true,
+      "version": 1,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 76590,
+      "sha256": "bda2b16ed5bd6650e6955e37fb42f0b4d602c1ff64c7bfc9e95185d73e070153"
+    },
+    {
+      "id": "confused-question",
+      "title": "小小发愣",
+      "filename": "assets/stickers/confused/confused-question.webp",
+      "category": "confused",
+      "mood": [
+        "surprised",
+        "puzzled",
+        "blank"
+      ],
+      "keywords": [
+        "发愣",
+        "疑惑",
+        "啊",
+        "没反应过来"
+      ],
+      "description": "团斑睁着圆圆的眼睛，小嘴微张，认真地愣了一下。",
+      "story": "遇到意料之外的消息，先留一点反应时间。",
+      "is_featured": false,
+      "version": 1,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 65866,
+      "sha256": "a3a4918bb5d863b667208fa7a807e7a943da846c5700f766f7dcee46a5b7054b"
+    },
+    {
+      "id": "confused-loading",
+      "title": "思考中",
+      "filename": "assets/stickers/confused/confused-loading.webp",
+      "category": "confused",
+      "mood": [
+        "thinking",
+        "loading",
+        "curious"
+      ],
+      "keywords": [
+        "思考",
+        "加载",
+        "等等",
+        "想一想"
+      ],
+      "description": "团斑托着小下巴，头顶的蓝色圆点像慢慢转动的念头。",
+      "story": "不是不理你，只是在认真想一想。",
+      "is_featured": false,
+      "version": 1,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 60812,
+      "sha256": "a28059145fc80d95076eb3fa218132017c280e018d2a80bfe93256d3bf56b0cb"
+    },
+    {
+      "id": "comfort-hug",
+      "title": "递一个抱抱",
+      "filename": "assets/stickers/comfort/comfort-hug.webp",
+      "category": "comfort",
+      "mood": [
+        "comfort",
+        "care",
+        "gentle"
+      ],
+      "keywords": [
+        "抱抱",
+        "安慰",
+        "陪伴",
+        "辛苦了"
+      ],
+      "description": "团斑轻轻张开双爪，捧出一颗温暖的小爱心。",
+      "story": "在对方愿意时，递出一个不催促的拥抱。",
+      "is_featured": true,
+      "version": 1,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 71140,
+      "sha256": "779c64e94646ef279f481160c095ce206e65de55abf48ac258352660409e297b"
+    },
+    {
+      "id": "comfort-mug",
+      "title": "抱杯陪伴",
+      "filename": "assets/stickers/comfort/comfort-mug.webp",
+      "category": "comfort",
+      "mood": [
+        "cozy",
+        "calm",
+        "comfort"
+      ],
+      "keywords": [
+        "热饮",
+        "安慰",
+        "陪伴",
+        "慢慢来"
+      ],
+      "description": "团斑抱着冒着热气的爪印杯，安静地坐在你身边。",
+      "story": "累的时候，一起歇一会儿，不急着给建议。",
+      "is_featured": false,
+      "version": 1,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 89502,
+      "sha256": "0fbe62dd5cc7cab045dbd4067b81aab68318d8b1db3eba9ef4d12fffa5b23ccc"
+    },
+    {
+      "id": "comfort-pat",
+      "title": "轻轻拍拍",
+      "filename": "assets/stickers/comfort/comfort-pat.webp",
+      "category": "comfort",
+      "mood": [
+        "reassuring",
+        "gentle",
+        "comfort"
+      ],
+      "keywords": [
+        "拍拍",
+        "安慰",
+        "软垫",
+        "没关系"
+      ],
+      "description": "团斑伸出小爪子，轻轻拍一拍浅蓝色的软垫。",
+      "story": "想说没关系时，用一个小动作轻轻回应。",
+      "is_featured": false,
+      "version": 1,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 76086,
+      "sha256": "f86687e6783011fde62ca5ba53fb2b19133141cd27d09b7851afbe47f753b9b8"
+    }
+  ]
+}
